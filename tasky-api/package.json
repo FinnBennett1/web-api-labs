@@ -8,7 +8,6 @@
   },
   "author": "Finn Bennett",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/eslint-parser": "^7.25.9",
@@ -18,8 +17,14 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "eslint": "^8.48.0",
     "express": "^4.21.1",
+    "mongod": "^2.0.0",
+    "mongodb": "4.1",
+    "mongoose": "^8.8.2",
     "uuid": "^11.0.3",
     "uuidv4": "^6.2.13"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
