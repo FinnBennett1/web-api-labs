@@ -1,8 +1,10 @@
-import mongoose from 'mongoose'; // Make sure imports are correct
-import User from './models/User.js';
-import Movie from './models/Movie.js';
-import users from './seedData/users.js';
-import movies from './seedData/movies.js';
+import dotenv from 'dotenv';
+dotenv.config();
+import mongoose from 'mongoose';
+import users from './users';
+import movies from './movies';
+import User from '../api/users/userModel';
+import Movie from '../api/movies/movieModel';
 
 async function main() {
     if (process.env.NODE_ENV !== 'development') {
@@ -10,7 +12,6 @@ async function main() {
         return;
     }
     await mongoose.connect(process.env.MONGO_DB);
-    // Drop collections
     await User.collection.drop().catch(err => console.log('User collection not found'));
     await Movie.collection.drop().catch(err => console.log('Movie collection not found'));
     await User.create(users);
